@@ -1,0 +1,592 @@
+/* ==============================
+   CONFIGURACIÓN GENERAL
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+
+    background: linear-gradient(
+        to bottom,
+        #0b0b2b,
+        #1b2735 70%,
+        #090a0f
+    );
+
+    color: white;
+    overflow-x: hidden;
+}
+
+
+/* ==============================
+   MENÚ
+============================== */
+
+.menu {
+    background-color: rgb(124, 107, 82);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.menu ul li {
+    position: relative;
+}
+
+.menu ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.menu ul li a:hover {
+    background-color: rgb(167, 147, 106);
+}
+
+
+/* ==============================
+   SUBMENÚ
+============================== */
+
+.menu ul li ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: rgb(167, 147, 106);
+    min-width: 160px;
+    padding: 0;
+}
+
+.menu ul li:hover ul {
+    display: block;
+}
+
+.menu ul li ul li {
+    width: 100%;
+}
+
+.menu ul li ul li a {
+    padding: 12px 15px;
+}
+
+
+/* ==============================
+   SECCIONES
+============================== */
+
+.pagina {
+    display: none;
+    min-height: calc(100vh - 55px);
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.pagina:target {
+    display: block;
+}
+
+
+/* ==============================
+   TÍTULOS
+============================== */
+
+h1 {
+    color: #d7b85a;
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 35px;
+}
+
+h2 {
+    color: #d7b85a;
+}
+
+p {
+    font-size: 18px;
+}
+
+
+/* ==============================
+   INICIO
+============================== */
+
+.inicio {
+    min-height: 580px;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+.inicio-texto {
+    width: 55%;
+}
+
+.inicio h1 {
+    font-size: 70px;
+    color: #5c8d88;
+    line-height: 1;
+}
+
+.inicio h1 span {
+    color: #d7b85a;
+}
+
+
+/* ==============================
+   IMAGEN DEL INICIO
+============================== */
+
+.inicio-imagen {
+    width: 380px;
+    height: 380px;
+
+    background: #e8f2ef;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 35px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.inicio-imagen img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+
+/* ==============================
+   TEXTO DE SECCIONES
+============================== */
+
+.texto-seccion {
+    max-width: 700px;
+    margin: 0 auto 40px;
+
+    line-height: 1.6;
+    color: #e5e5e5;
+}
+
+
+/* ==============================
+   BOTONES MISIÓN / VISIÓN
+============================== */
+
+.botones-info {
+    display: flex;
+    justify-content: center;
+
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.botones-info a {
+    background-color: #5c8d88;
+
+    color: white;
+    text-decoration: none;
+
+    padding: 15px 30px;
+
+    border-radius: 10px;
+
+    font-size: 18px;
+}
+
+.botones-info a:hover {
+    background-color: #d7b85a;
+    color: #222;
+}
+
+
+/* ==============================
+   IMÁGENES GRANDES
+============================== */
+
+.imagen-grande {
+    width: 900px;
+    max-width: 90%;
+
+    display: block;
+    margin: 30px auto;
+
+    border-radius: 10px;
+}
+
+
+/* ==============================
+   EVIDENCIAS
+============================== */
+
+.seccion {
+    padding: 70px 8%;
+}
+
+.etiqueta {
+    color: #d0ad4f;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.introduccion {
+    max-width: 750px;
+
+    margin: 0 auto 45px;
+
+    color: #dddddd;
+}
+
+
+/* ==============================
+   GALERÍA
+============================== */
+
+.galeria {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+.evidencia {
+    background: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+    text-align: left;
+
+    transition: 0.3s;
+}
+
+.evidencia:hover {
+    transform: translateY(-5px);
+}
+
+.evidencia img {
+    width: 100%;
+
+    height: 260px;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+.evidencia div {
+    padding: 22px;
+}
+
+.evidencia h3 {
+    color: #547f7a;
+
+    margin-bottom: 8px;
+}
+
+.evidencia p {
+    color: #555;
+
+    font-size: 16px;
+}
+
+
+/* ==============================
+   CONTACTO
+============================== */
+
+.contacto-info {
+    background: rgba(255, 255, 255, 0.08);
+
+    max-width: 600px;
+
+    margin: 30px auto;
+
+    padding: 35px;
+
+    border-radius: 20px;
+}
+
+.contacto-info h3 {
+    color: #d7b85a;
+
+    margin-top: 20px;
+
+    margin-bottom: 8px;
+}
+
+.contacto-info h3:first-child {
+    margin-top: 0;
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    display: block;
+
+    background: #527b77;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 45px 20px;
+}
+
+.footer-logo {
+    font-size: 25px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.copyright {
+    margin-top: 20px;
+
+    font-size: 13px;
+
+    opacity: 0.8;
+}
+
+
+/* ==============================
+   ESTRELLAS
+============================== */
+
+.stars {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 2px;
+    height: 2px;
+
+    background: white;
+
+    box-shadow:
+        5vw 8vh 2px white,
+        12vw 20vh 1px white,
+        18vw 5vh 2px white,
+        25vw 30vh 1px white,
+        32vw 12vh 2px white,
+        38vw 40vh 1px white,
+        45vw 18vh 2px white,
+        52vw 32vh 1px white,
+        58vw 8vh 2px white,
+        65vw 25vh 1px white,
+        72vw 12vh 2px white,
+        80vw 35vh 1px white,
+        88vw 18vh 2px white,
+        95vw 8vh 1px white,
+
+        8vw 48vh 2px white,
+        15vw 65vh 1px white,
+        22vw 52vh 2px white,
+        30vw 75vh 1px white,
+        37vw 58vh 2px white,
+        44vw 85vh 1px white,
+        51vw 62vh 2px white,
+        58vw 78vh 1px white,
+        65vw 55vh 2px white,
+        72vw 88vh 1px white,
+        79vw 65vh 2px white,
+        86vw 80vh 1px white,
+        93vw 58vh 2px white;
+
+    animation: twinkle 4s infinite alternate;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+@keyframes twinkle {
+
+    0% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+
+/* ==============================
+   ESTRELLAS FUGACES
+============================== */
+
+.shooting-star {
+    position: fixed;
+
+    width: 100px;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        white,
+        transparent
+    );
+
+    transform: rotate(25deg);
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    animation: shoot 4s infinite ease-in;
+}
+
+.shooting-star:nth-of-type(1) {
+    top: 15%;
+    left: -120px;
+    animation-delay: 0s;
+}
+
+.shooting-star:nth-of-type(2) {
+    top: 40%;
+    left: -120px;
+    animation-delay: 1.5s;
+}
+
+.shooting-star:nth-of-type(3) {
+    top: 65%;
+    left: -120px;
+    animation-delay: 3s;
+}
+
+@keyframes shoot {
+
+    0% {
+        transform:
+            translateX(0)
+            translateY(0)
+            rotate(25deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateX(120vw)
+            translateY(50vh)
+            rotate(25deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* ==============================
+   CELULAR
+============================== */
+
+@media (max-width: 700px) {
+
+    .menu ul {
+        flex-direction: column;
+    }
+
+    .menu ul li ul {
+        position: static;
+        width: 100%;
+    }
+
+    .inicio {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .inicio-texto {
+        width: 100%;
+    }
+
+    .inicio h1 {
+        font-size: 50px;
+    }
+
+    .inicio-imagen {
+        width: 280px;
+        height: 280px;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ==============================
+   BANNERS
+============================== */
+
+.banner {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+
+    display: block;
+
+    margin: 0 auto 40px;
+
+    border-radius: 15px;
+}
